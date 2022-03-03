@@ -20,6 +20,7 @@ Make the following program work, which makes use of Variadic templates and Recur
 #include <iostream>
 #include <string>
 #include <typeinfo>
+void variadicHelper();
 
 struct Point
 {
@@ -73,14 +74,7 @@ void variadicHelper(T&& first, Args&& ... args)
     
 }
 
-template<typename T>
-void variadicHelper(T&& first)
-{
-    Wrapper<T>(std::forward<T>(first)).print();
-        
-}
-
-// void variadicHelper() {}
+void variadicHelper() {}
 
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
